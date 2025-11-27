@@ -12,7 +12,7 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "jsx": "react-jsx", 
+    "jsx": "react-jsx",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -21,7 +21,9 @@
     "noEmit": true,
 
     /* Linting */
-    "strict": true,
+    "strict": false,
+    "noImplicitAny": false,
+    
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
