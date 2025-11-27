@@ -1,0 +1,76 @@
+export const styles: { [key: string]: React.CSSProperties } = {
+    page: {
+      padding: 30,
+      fontFamily: "Arial, sans-serif",
+      maxWidth: 800,
+      margin: "auto",
+    },
+    sectionBox: {
+      marginBottom: 30,
+      padding: 20,
+      borderRadius: 12,
+      boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+      background: "#fff",
+    },
+    sectionTitle: {
+      marginBottom: 15,
+      color: "#555",
+      fontSize: 16,
+      fontWeight: 600,
+    },
+    inputRow: {
+      display: "flex",
+      gap: 15,
+      marginBottom: 15,
+      flexWrap: "wrap",
+    },
+    input: {
+      flex: 1,
+      padding: 10,
+      borderRadius: 8,
+      border: "1px solid #ccc",
+    },
+    bookBtn: {
+      padding: "10px 20px",
+      borderRadius: 8,
+      border: "none",
+      background: "#007bff",
+      color: "#fff",
+      cursor: "pointer",
+      transition: "background 0.3s",
+    },
+    bookingCard: {
+      padding: "12px 18px",
+      marginBottom: 12,
+      borderRadius: 10,
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
+    },
+    booked: {
+      background: "#e3f7ff",
+    },
+    cancelled: {
+      background: "#ffdede",
+    },
+    statusText: {
+      textTransform: "uppercase",
+      marginBottom: 4,
+      display: "block",
+      fontWeight: "bold",
+    },
+    bookingTime: {
+      color: "#555",
+      fontSize: 14,
+    },
+    cancelBtn: {
+      background: "#ff4d4f",
+      color: "#fff",
+      padding: "8px 14px",
+      borderRadius: 6,
+      border: "none",
+      cursor: "pointer",
+      fontWeight: "bold",
+    },
+  };
