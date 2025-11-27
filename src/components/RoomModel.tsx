@@ -35,19 +35,19 @@ const RoomModal = ({ room, onClose }: RoomModalProps) => {
 
   const onSubmit = async (data: any) => {
     try {
-      let response;
+     
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("capacity", data.capacity);
       const file = (data.image as FileList)?.[0];
       if (file) formData.append("image", file);
       if (isEdit) {
-        response = await api.put(`/rooms/${room._id}`, formData, {
+      await api.put(`/rooms/${room._id}`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         toast.success("Room updated successfully");
       } else {
-        response = await api.post("/rooms/create", formData, {
+      await api.post("/rooms/create", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         toast.success("Room created successfully");
