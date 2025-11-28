@@ -8,4 +8,5 @@ export const socket = io(url, {
   auth: {
     token: token,
   },
+  transports: ["websocket"]
 });
