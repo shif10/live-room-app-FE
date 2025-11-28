@@ -14,6 +14,19 @@ export const styles: { [key: string]: React.CSSProperties } = {
       // transition: "transform 0.3s, box-shadow 0.3s",
       cursor: "pointer",
     },
+
+    avatarWrapper: {
+      display: "flex",
+      justifyContent: "center",
+      marginBottom: 15,
+    },
+    avatar: {
+      width: 80,
+      height: 80,
+      borderRadius: "50%",
+      objectFit: "cover",
+      border: "2px solid #ccc",
+    },
     roomImage: {
       width: "100%",
       height: "100%",

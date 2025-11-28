@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
+
 const RoomCard = ({ room, isAdmin, onEdit, onDelete }: any) => {
   const navigate = useNavigate();
 
@@ -24,8 +25,8 @@ const RoomCard = ({ room, isAdmin, onEdit, onDelete }: any) => {
           borderRadius: 8,
           fontSize: 12,
           fontWeight: 500,
-          background: room.status === "Available" ? "#d4edda" : "#f8d7da",
-          color: room.status === "Available" ? "#155724" : "#721c24",
+          background: room.status === "available" ? "#d4edda" : "#f8d7da",
+          color: room.status === "available" ? "#155724" : "#721c24",
         }}
       >
         {room.status.toUpperCase()}

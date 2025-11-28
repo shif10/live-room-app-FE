@@ -19,7 +19,13 @@ const Sidebar: React.FC<SidebarProps> = ({
         <h3 style={styles.sectionTitle}>
           {isAdmin ? "Quick Actions" : "Your Profile"}
         </h3>
-
+        <div style={styles.avatarWrapper}>
+          <img
+            src={user?.avatar || "https://via.placeholder.com/80"}
+            alt="User Avatar"
+            style={styles.avatar}
+          />
+        </div>
         {isAdmin && (
           <button onClick={onCreateRoom} style={styles.createLink}>
             + Create Room
