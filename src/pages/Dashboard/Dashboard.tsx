@@ -26,10 +26,12 @@ const Dashboard = () => {
     setLoading(false);
   };
   const confirmDelete = async () => {
+    setLoading(true)
     if (!deleteRoomId) return;
     await api.delete(`/rooms/${deleteRoomId}`);
     toast.success("Delete Room Successfully");
     setDeleteRoomId(null);
+    setLoading(false)
   };
 
 
