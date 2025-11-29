@@ -63,14 +63,16 @@ const Bookings = () => {
 
   const createBooking = async (data: any) => {
     try {
+      setLoading(true)
       await bookingAPI.book({
         roomId,
         userId: user?._id,
         startTime: moment(data.startTime).utc().format(),
         endTime: moment(data.endTime).utc().format(),
       });
-
+      setLoading(false)
       toast.success("Booking created");
+     
       reset();
     } catch (err: any) {
       toast.error(err.response?.data?.message || "Error");

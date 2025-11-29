@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 
-
 const RoomCard = ({ room, isAdmin, onEdit, onDelete }: any) => {
   const navigate = useNavigate();
 
@@ -31,19 +30,23 @@ const RoomCard = ({ room, isAdmin, onEdit, onDelete }: any) => {
       >
         {room.status.toUpperCase()}
       </span>
-
-      <div style={{ marginTop: 15 }}>
-        <img
-          src={room.imageUrl}
-          alt={room.name}
-          style={{
-            width: "100%",
-            height: "150px",
-            objectFit: "cover",
-            borderRadius: 8,
-          }}
-        />
-      </div>
+      {room.imageUrl && (
+        <>
+          {" "}
+          <div style={{ marginTop: 15 }}>
+            <img
+              src={room.imageUrl}
+              alt={room.name}
+              style={{
+                width: "100%",
+                height: "150px",
+                objectFit: "cover",
+                borderRadius: 8,
+              }}
+            />
+          </div>
+        </>
+      )}
 
       <Link
         style={{
@@ -54,7 +57,7 @@ const RoomCard = ({ room, isAdmin, onEdit, onDelete }: any) => {
           borderRadius: 8,
           textAlign: "center",
           marginTop: 10,
-          textDecoration: "none",   
+          textDecoration: "none",
         }}
         to={`/rooms/${room._id}/bookings`}
       >
