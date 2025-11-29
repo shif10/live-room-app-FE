@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { api } from "../api/axios";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import Loader from "./Loader";
 
 interface RoomModalProps {
   room?: any; 
@@ -18,7 +19,7 @@ const RoomModal = ({ room, onClose }: RoomModalProps) => {
   const isEdit = !!room;
   
   const [preview, setPreview] = useState<string | null>(room?.imageUrl || null);
- 
+ const [loading,setLoading]=useState<boolean>(false)
   const { register, handleSubmit, formState: { errors } } = useForm<RoomFormFields>({
     defaultValues: room ? {
       name: room.name,
@@ -35,7 +36,7 @@ const RoomModal = ({ room, onClose }: RoomModalProps) => {
 
   const onSubmit = async (data: any) => {
     try {
-     
+      setLoading(true)
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("capacity", data.capacity);
@@ -53,7 +54,7 @@ const RoomModal = ({ room, onClose }: RoomModalProps) => {
         toast.success("Room created successfully");
       }
 
-   
+      setLoading(false)
       onClose();
     } catch (err) {
       toast.error(`Failed to ${isEdit ? "update" : "create"} room`);
@@ -65,6 +66,10 @@ const RoomModal = ({ room, onClose }: RoomModalProps) => {
       setPreview(URL.createObjectURL(file));
     }
   };
+  if(loading)
+  {
+    return <Loader/>
+  }
   return (
     <div style={styles.backdrop}>
       <div style={styles.modal}>
