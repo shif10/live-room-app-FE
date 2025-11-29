@@ -66,8 +66,8 @@ const Bookings = () => {
       await bookingAPI.book({
         roomId,
         userId: user?._id,
-        startTime: data.startTime,
-        endTime: data.endTime,
+        startTime: moment(data.startTime).utc().format(),
+        endTime: moment(data.endTime).utc().format(),
       });
 
       toast.success("Booking created");
